@@ -1,3 +1,49 @@
+create database BTTH01_CSE485;
+use BTTH01_CSE485;
+
+create table tacgia (
+    ma_tgia int unsigned not null primary key,
+    ten_tgia varchar(100) not null,
+    hinh_tgia varchar(100)
+);
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (1, "Nhacvietplus");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (2, "Sưu tầm");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (3, "Sandy");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (4, "Lê Trung Ngân");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (5, "Khánh Ngọc");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (6, "Night Stalker");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (7, "Phạm Phương Anh");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (8, "Tâm tình");
+
+
+create table theloai (
+    ma_tloai int unsigned not null primary key,
+    ten_tloai varchar(50) not null
+);
+INSERT INTO theloai VALUES (1, "Nhạc trẻ");
+INSERT INTO theloai VALUES (2, "Nhạc trữ tình");
+INSERT INTO theloai VALUES (3, "Nhạc cách mạng");
+INSERT INTO theloai VALUES (4, "Nhạc thiếu nhi");
+INSERT INTO theloai VALUES (5, "Nhạc quê hương");
+INSERT INTO theloai VALUES (6, "POP");
+INSERT INTO theloai VALUES (7, "Rock");
+INSERT INTO theloai VALUES (8, "R&B");
+
+create table baiviet (
+    ma_bviet int unsigned not null primary key,
+    tieude varchar(200) not null,
+    ten_bhat varchar(100) not null,
+    ma_tloai int unsigned not null,
+    tomtat text not null,
+    noidung text,
+    ma_tgia int unsigned not null,
+    ngayviet datetime not null,
+    hinhanh varchar(200),
+    constraint fk_tloai foreign key (ma_tloai) references theloai(ma_tloai),
+    constraint fk_tgia foreign key (ma_tgia) references tacgia(ma_tgia)
+);
+
+
 INSERT INTO baiviet (ma_bviet, tieude, ten_bhat, ma_tloai, tomtat, ma_tgia, ngayviet)
 VALUES (
 1, 
@@ -112,3 +158,13 @@ VALUES (
 "Ánh nắng cuối ngày rồi cũng sẽ tắt, dòng sông con đò rồi cũng sẽ rẽ sang một hướng khác. Nhưng việc trồng người luôn cảm thụ với chuyến đò ngang, cứ tần tảo đưa rồi lặng lẽ quay về đưa sang. Con đò năm xưa của Thầy nặng trĩu yêu thương, hy sinh thầm lặng.",
 8, "2014/1/2"
 );
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (1, "Nhacvietplus");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (2, "Sưu tầm");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (3, "Sandy");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (4, "Lê Trung Ngân");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (5, "Khánh Ngọc");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (6, "Night Stalker");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (7, "Phạm Phương Anh");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (8, "Tâm tình");
+
+
