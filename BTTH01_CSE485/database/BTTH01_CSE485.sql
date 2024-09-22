@@ -6,28 +6,11 @@ create table tacgia (
     ten_tgia varchar(100) not null,
     hinh_tgia varchar(100)
 );
-INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (1, "Nhacvietplus");
-INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (2, "Sưu tầm");
-INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (3, "Sandy");
-INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (4, "Lê Trung Ngân");
-INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (5, "Khánh Ngọc");
-INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (6, "Night Stalker");
-INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (7, "Phạm Phương Anh");
-INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (8, "Tâm tình");
-
 
 create table theloai (
     ma_tloai int unsigned not null primary key,
     ten_tloai varchar(50) not null
 );
-INSERT INTO theloai VALUES (1, "Nhạc trẻ");
-INSERT INTO theloai VALUES (2, "Nhạc trữ tình");
-INSERT INTO theloai VALUES (3, "Nhạc cách mạng");
-INSERT INTO theloai VALUES (4, "Nhạc thiếu nhi");
-INSERT INTO theloai VALUES (5, "Nhạc quê hương");
-INSERT INTO theloai VALUES (6, "POP");
-INSERT INTO theloai VALUES (7, "Rock");
-INSERT INTO theloai VALUES (8, "R&B");
 
 create table baiviet (
     ma_bviet int unsigned not null primary key,
@@ -43,6 +26,33 @@ create table baiviet (
     constraint fk_tgia foreign key (ma_tgia) references tacgia(ma_tgia)
 );
 
+create table users (
+user_id int check (user_id >= 0 ) not null,
+user_name varchar(200) not null,
+user_pd varchar(200) not null);
+
+INSERT INTO users (user_id, user_name, user_pd) VALUES (1, 'NguyenQuan', '@1');
+INSERT INTO users (user_id, user_name, user_pd) VALUES (2, 'PhucNguyen', '@2');
+INSERT INTO users (user_id, user_name, user_pd) VALUES (3, 'TienLuc', '@3');
+INSERT INTO users (user_id, user_name, user_pd) VALUES (4, 'HuuMinh', '@4');
+
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (1, "Nhacvietplus");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (2, "Sưu tầm");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (3, "Sandy");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (4, "Lê Trung Ngân");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (5, "Khánh Ngọc");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (6, "Night Stalker");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (7, "Phạm Phương Anh");
+INSERT INTO tacgia (ma_tgia, ten_tgia) VALUES (8, "Tâm tình");
+
+INSERT INTO theloai VALUES (1, "Nhạc trẻ");
+INSERT INTO theloai VALUES (2, "Nhạc trữ tình");
+INSERT INTO theloai VALUES (3, "Nhạc cách mạng");
+INSERT INTO theloai VALUES (4, "Nhạc thiếu nhi");
+INSERT INTO theloai VALUES (5, "Nhạc quê hương");
+INSERT INTO theloai VALUES (6, "POP");
+INSERT INTO theloai VALUES (7, "Rock");
+INSERT INTO theloai VALUES (8, "R&B");
 
 INSERT INTO baiviet (ma_bviet, tieude, ten_bhat, ma_tloai, tomtat, ma_tgia, ngayviet)
 VALUES (
