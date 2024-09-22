@@ -43,26 +43,38 @@
 
     </header>
     <main class="container mt-5 mb-5">
-        <!-- <h3 class="text-center text-uppercase mb-3 text-primary">CẢM NHẬN VỀ BÀI HÁT</h3> -->
         <div class="row">
             <div class="col-sm">
-                <h3 class="text-center text-uppercase fw-bold">Sửa thông tin thể loại</h3>
-                <form action="process_add_category.php" method="post">
-                <div class="input-group mt-3 mb-3">
-                        <span class="input-group-text" id="lblCatId">Mã thể loại</span>
-                        <input type="text" class="form-control" name="txtCatId" readonly value="1">
-                    </div>
+                <a href="add_category.php" class="btn btn-success">Thêm mới</a>
+                <table class="table">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Tên thể loại</th>
+                            <th>Sửa</th>
+                            <th>Xóa</th>
+                        </tr>
+                    <?php
+                        include 'db.php'; // Kết nối CSDL
 
-                    <div class="input-group mt-3 mb-3">
-                        <span class="input-group-text" id="lblCatName">Tên thể loại</span>
-                        <input type="text" class="form-control" name="txtCatName" value = "Nhạc trữ tình">
-                    </div>
+                        // Truy vấn lấy danh sách thể loại
+                        $sql = "SELECT ma_tloai, ten_tloai FROM theloai";
+                        $result = $conn->query($sql);
 
-                    <div class="form-group  float-end ">
-                        <input type="submit" value="Lưu lại" class="btn btn-success">
-                        <a href="category.php" class="btn btn-warning ">Quay lại</a>
-                    </div>
-                </form>
+                        if ($result->num_rows > 0) {
+                            // Hiển thị thể loại
+                            while($row = $result->fetch_assoc()) {
+                                echo "<tr>";
+                                echo "<td>" . $row['ma_tloai'] . "</td>";
+                                echo "<td>" . $row['ten_tloai'] . "</td>";
+                                echo "<td><a href='edit_category.php?id=" . $row["ma_tloai"] . "'><i class='fa fa-edit'></i></a></td>";
+                                echo "<td><a href='delete_category.php?id=" . $row["ma_tloai"] . "'><i class='fa fa-trash'></i></a></td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "Không có thể loại nào.";
+                        }
+                    ?>
+                </table>
             </div>
         </div>
     </main>
@@ -70,5 +82,6 @@
         <h4 class="text-center text-uppercase fw-bold">TLU's music garden</h4>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    
 </body>
 </html>
