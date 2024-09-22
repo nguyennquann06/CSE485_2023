@@ -88,4 +88,23 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
+<?php
+include 'connect.php'; // Kết nối CSDL
+
+// Truy vấn lấy danh sách thể loại
+$sql = "SELECT ma_tloai, ten_tloai FROM theloai";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // Hiển thị thể loại
+    while($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row['ma_tloai'] . "</td>";
+        echo "<td>" . $row['ten_tloai'] . "</td>";
+        echo "</tr>";
+    }
+} else {
+    echo "Không có thể loại nào.";
+}
+?>
 </html>
