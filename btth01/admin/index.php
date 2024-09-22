@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
 </head>
 <body>
     <?php
-        include 'db.php'; // Kết nối CSDL
+        include 'connect.php'; // Kết nối CSDL
 
         // Đếm số lượng thể loại
         $sql_theloai = "SELECT COUNT(ma_tloai) AS count_theloai FROM theloai";
