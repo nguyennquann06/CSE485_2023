@@ -79,7 +79,11 @@
                 <td><?php echo $r['ma_tloai'];?></td>
                 <td><?php echo $r['ten_tloai'];?></td>
                 <td>
+<<<<<<< HEAD
                     <a href="edit_category.php?ma_tloai=<?php echo $r['ma_tloai'];?>" class="btn btn-info">Sửa</a>  
+=======
+                    <a href="#" class="btn btn-info">Sửa</a> 
+>>>>>>> 3a4e515c4bcdeb96c79a12bf766b0256bd47e0cb
                     <a onclick="return confirm('Bạn có muốn xóa thể loại này không?');" href="delete_category.php?ma_tloai=<?php echo $r['ma_tloai'];?>" class = "btn btn-danger">Xóa</a>
                 </td>
             </tr>
@@ -126,6 +130,40 @@
 
             
     </div>
+<<<<<<< HEAD
+=======
+    <!-- <div class="modal" id="myModal">
+    <div class="modal-dialog">
+    <div class="modal-content"> -->
+
+      <!-- Modal Header -->
+    <!-- <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div> -->
+
+      <!-- Modal body -->
+    <!-- <div class="modal-body">
+        <form action="them.php" method="post">
+            <div class="form-group">
+                <label for="hoTen">
+                    Họ tên  
+                </label><input type="text" id="hoTen" class="form-control" name="hoTen">
+            </div>
+            <div class="form-group">
+                <label for="maSV">
+                    Mã sinh viên
+                </label><input type="text" id="maSV" class="form-control" name="maSV">
+            </div>
+            <div class="form-group">
+                <label for="lop">
+                    Lớp
+                </label><input type="text" id="lop" class="form-control" name="lop">
+            </div>
+            <button class="btn btn-success">Thêm sinh viên</button>
+        </form>
+    </div> -->
+>>>>>>> 3a4e515c4bcdeb96c79a12bf766b0256bd47e0cb
     <footer class="bg-white d-flex justify-content-center align-items-center border-top border-secondary  border-2" style="height:80px">
         <h4 class="text-center text-uppercase fw-bold">TLU's music garden</h4>
     </footer>

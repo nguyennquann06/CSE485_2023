@@ -51,7 +51,11 @@
     </header>
     <?php
         //nhan du lieu tu form
+<<<<<<< HEAD
         $mtl = $_POST['ma_tloai'];
+=======
+        $mtv = $_POST['ma_tloai'];
+>>>>>>> 3a4e515c4bcdeb96c79a12bf766b0256bd47e0cb
         $ttl = $_POST['ten_tloai'];
 
         // ket noi csdl
@@ -59,7 +63,11 @@
 
         // viet lenh sql de them du lieu
         $addsql = "Insert into theloai 
+<<<<<<< HEAD
         (ma_tloai, ten_tloai) Values ('$mtl', '$ttl')";
+=======
+        (ma_tloai, ten_tloai) Values ('$mtv', '$ttl')";
+>>>>>>> 3a4e515c4bcdeb96c79a12bf766b0256bd47e0cb
         // echo $addsql; exit ;
 
         //thuc thi cau lenh
@@ -67,7 +75,11 @@
 
         //in thong bao thanh cong
         // echo"<h1>Them thanh cong</h1>";
+<<<<<<< HEAD
         header("Location: category.php");
+=======
+        // header("Location: category.php");
+>>>>>>> 3a4e515c4bcdeb96c79a12bf766b0256bd47e0cb
     ?>
     <footer class="bg-white d-flex justify-content-center align-items-center border-top border-secondary  border-2" style="height:80px">
         <h4 class="text-center text-uppercase fw-bold">TLU's music garden</h4>
